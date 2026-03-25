@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>新シッピングポリシー $400〜$500 メリット解説</title>
+  <style>
+    :root {
+      --primary: #1a56db;
+      --primary-light: #e8effc;
+      --danger: #dc2626;
+      --danger-light: #fef2f2;
+      --success: #16a34a;
+      --success-light: #f0fdf4;
+      --warning: #d97706;
+      --warning-light: #fffbeb;
+      --gray-50: #f9fafb;
+      --gray-100: #f3f4f6;
+      --gray-200: #e5e7eb;
+      --gray-300: #d1d5db;
+      --gray-500: #6b7280;
+      --gray-700: #374151;
+      --gray-900: #111827;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+      background: var(--gray-50);
+      color: var(--gray-900);
+      line-height: 1.7;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 24px;
+    }
+
+    /* ===== Header ===== */
+    .header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .header h1 {
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--gray-900);
+      margin-bottom: 8px;
+    }
+    .header .subtitle {
+      font-size: 15px;
+      color: var(--gray-500);
+    }
+    .header .badge {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 4px 16px;
+      background: var(--primary);
+      color: #fff;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    /* ===== Section ===== */
+    .section {
+      background: #fff;
+      border-radius: 12px;
+      padding: 32px;
+      margin-bottom: 24px;
+      border: 1px solid var(--gray-200);
+    }
+    .section h2 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--primary);
+      color: var(--gray-900);
+    }
+    .section h3 {
+      font-size: 16px;
+      font-weight: 700;
+      margin: 20px 0 10px;
+      color: var(--gray-700);
+    }
+    .section p {
+      margin-bottom: 12px;
+      font-size: 15px;
+    }
+
+    /* ===== Comparison Table ===== */
+    .compare-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 20px 0;
+    }
+    .compare-card {
+      padding: 20px;
+      border-radius: 10px;
+      border: 2px solid;
+    }
+    .compare-card.old {
+      border-color: var(--danger);
+      background: var(--danger-light);
+    }
+    .compare-card.new {
+      border-color: var(--success);
+      background: var(--success-light);
+    }
+    .compare-card .label {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+    .compare-card.old .label { color: var(--danger); }
+    .compare-card.new .label { color: var(--success); }
+    .compare-card .title {
+      font-size: 18px;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+    .compare-card ul {
+      list-style: none;
+      padding: 0;
+    }
+    .compare-card li {
+      padding: 4px 0;
+      font-size: 14px;
+      padding-left: 20px;
+      position: relative;
+    }
+    .compare-card.old li::before { content: '✕'; position: absolute; left: 0; color: var(--danger); font-weight: bold; }
+    .compare-card.new li::before { content: '✓'; position: absolute; left: 0; color: var(--success); font-weight: bold; }
+
+    /* ===== Flow Diagram ===== */
+    .flow {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin: 20px 0;
+    }
+    .flow-step {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      background: var(--gray-100);
+      border-radius: 8px;
+      font-size: 14px;
+    }
+    .flow-step .num {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 13px;
+      flex-shrink: 0;
+    }
+    .flow-arrow {
+      text-align: center;
+      font-size: 20px;
+      color: var(--gray-300);
+      padding: 2px 0;
+    }
+    .flow-step.bad { background: #fef2f2; }
+    .flow-step.bad .num { background: var(--danger); color: #fff; }
+    .flow-step.good { background: #f0fdf4; }
+    .flow-step.good .num { background: var(--success); color: #fff; }
+    .flow-step.neutral .num { background: var(--gray-500); color: #fff; }
+
+    /* ===== Highlight Box ===== */
+    .highlight {
+      padding: 16px 20px;
+      border-radius: 8px;
+      margin: 16px 0;
+      font-size: 14px;
+    }
+    .highlight.danger { background: var(--danger-light); border-left: 4px solid var(--danger); }
+    .highlight.success { background: var(--success-light); border-left: 4px solid var(--success); }
+    .highlight.warning { background: var(--warning-light); border-left: 4px solid var(--warning); }
+    .highlight.info { background: var(--primary-light); border-left: 4px solid var(--primary); }
+    .highlight strong { display: block; margin-bottom: 4px; }
+
+    /* ===== Calc Example ===== */
+    .calc-example {
+      margin: 20px 0;
+      border: 1px solid var(--gray-200);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .calc-header {
+      padding: 12px 20px;
+      font-weight: 700;
+      font-size: 15px;
+    }
+    .calc-header.old-bg { background: #fecaca; color: var(--danger); }
+    .calc-header.new-bg { background: #bbf7d0; color: var(--success); }
+    .calc-body {
+      padding: 16px 20px;
+    }
+    .calc-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 6px 0;
+      font-size: 14px;
+      border-bottom: 1px solid var(--gray-100);
+    }
+    .calc-row:last-child { border-bottom: none; }
+    .calc-row .label { color: var(--gray-500); }
+    .calc-row .value { font-weight: 600; }
+    .calc-row.total { border-top: 2px solid var(--gray-200); padding-top: 10px; margin-top: 4px; }
+    .calc-row.total .label { font-weight: 700; color: var(--gray-900); }
+    .calc-row.total .value { font-size: 16px; }
+    .calc-row .value.red { color: var(--danger); }
+    .calc-row .value.green { color: var(--success); }
+
+    /* ===== Scenario Box ===== */
+    .scenario {
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      border-radius: 10px;
+      padding: 20px;
+      margin: 16px 0;
+    }
+    .scenario-title {
+      font-weight: 700;
+      font-size: 15px;
+      margin-bottom: 10px;
+      color: var(--primary);
+    }
+
+    /* ===== Summary Cards ===== */
+    .merit-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 16px;
+      margin: 20px 0;
+    }
+    .merit-card {
+      text-align: center;
+      padding: 24px 16px;
+      background: var(--primary-light);
+      border-radius: 10px;
+      border: 1px solid #c7d7f5;
+    }
+    .merit-card .icon { font-size: 32px; margin-bottom: 8px; }
+    .merit-card .title { font-weight: 700; font-size: 14px; margin-bottom: 6px; color: var(--primary); }
+    .merit-card .desc { font-size: 13px; color: var(--gray-700); }
+
+    /* ===== Table ===== */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 14px;
+    }
+    th, td {
+      padding: 10px 12px;
+      text-align: left;
+      border-bottom: 1px solid var(--gray-200);
+    }
+    th {
+      background: var(--gray-100);
+      font-weight: 700;
+      font-size: 13px;
+      color: var(--gray-500);
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+    td { color: var(--gray-700); }
+    tr:hover td { background: var(--gray-50); }
+
+    /* ===== Footer ===== */
+    .footer {
+      text-align: center;
+      padding: 24px;
+      color: var(--gray-500);
+      font-size: 13px;
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 640px) {
+      .compare-grid, .merit-cards { grid-template-columns: 1fr; }
+      .container { padding: 20px 16px; }
+      .section { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- ===== HEADER ===== -->
+  <div class="header">
+    <h1>シッピングポリシー上限の拡張</h1>
+    <p class="subtitle">一括シートV3 / 2026年3月20日 導入</p>
+  </div>
+
+  <!-- ===== 変更点 ===== -->
+  <div class="section" style="text-align:center; padding:40px 32px;">
+    <p style="font-size:18px; color:var(--gray-500); margin-bottom:16px;">シッピングポリシーの送料上限を</p>
+    <div style="display:flex; align-items:center; justify-content:center; gap:24px; flex-wrap:wrap;">
+      <div style="font-size:48px; font-weight:800; color:var(--danger);">$390</div>
+      <div style="font-size:32px; color:var(--gray-300);">→</div>
+      <div style="font-size:48px; font-weight:800; color:var(--success);">$500</div>
+    </div>
+    <p style="font-size:18px; color:var(--gray-500); margin-top:16px;">に拡張しました（$400〜$500のポリシー 新品11件 + 中古11件 = 計22件を追加）</p>
+  </div>
+
+  <!-- ===== 2. 背景と問題 ===== -->
+  <div class="section">
+    <h2>2. なぜ必要だったのか</h2>
+
+    <h3>問題: $2,500の壁と連鎖的コスト増</h3>
+    <p>eBayでは、DDP（関税セラー払い）とDDU（関税バイヤー払い）の切り替わりが<strong>販売価格 $2,500</strong> を境に発生します。</p>
+
+    <table>
+      <thead>
+        <tr><th>販売価格</th><th>発送方式</th><th>関税の負担者</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>$2,500 未満</td><td><strong>DDP</strong>（Delivered Duty Paid）</td><td>セラー（送料に含める）</td></tr>
+        <tr><td>$2,500 以上</td><td><strong>DDU</strong>（Delivered Duty Unpaid）</td><td>バイヤー（受取時に支払い）</td></tr>
+      </tbody>
+    </table>
+
+    <div style="background:var(--primary-light); border-left:6px solid var(--primary); border-radius:8px; padding:24px 28px; margin:20px 0;">
+      <p style="font-size:22px; font-weight:800; color:var(--gray-900); margin-bottom:12px;">現在の計算式では、DDU販売価格 $2,500 の時の想定関税額は約 $500 付近</p>
+      <p style="font-size:18px; color:var(--gray-700); margin-bottom:12px;">関税額 + 諸費用 + eBayが徴収する関税に対する手数料の不足分の合計です。</p>
+      <p style="font-size:22px; color:var(--danger); font-weight:800; margin-bottom:12px;">広告費率などの設定によって変動します。</p>
+      <p style="font-size:16px; color:var(--gray-700);">$500ポリシーでおおよそ $2,500 の商品までカバーできます。<br>
+      計算式の詳細は <a href="https://naokijodan.github.io/bulk-tools-guide/eBay%E6%89%8B%E6%95%B0%E6%96%99%E8%A8%88%E7%AE%97%E5%95%8F%E9%A1%8C_%E5%88%86%E6%9E%90%E8%B3%87%E6%96%99.html" target="_blank" style="color:var(--primary); font-weight:700; text-decoration:underline;">eBay手数料計算問題 分析資料</a> を参照してください。</p>
+    </div>
+
+    <div style="background:var(--warning-light); border-left:6px solid var(--warning); border-radius:8px; padding:24px 28px; margin:20px 0;">
+      <p style="font-size:22px; font-weight:800; color:var(--warning); margin-bottom:12px;">注意: シッピングポリシーの「対応価格範囲」は現在機能していません</p>
+      <p style="font-size:18px; color:var(--gray-700); margin-bottom:8px;">ポリシー名に含まれるDDU価格帯（例: 2519-2584）は、旧計算式に基づく値です。</p>
+      <p style="font-size:18px; color:var(--gray-700); margin-bottom:8px;">DDP基準の手数料計算への改修により想定関税額が変わったため、これらの価格帯は実態と合っていません。</p>
+      <p style="font-size:20px; font-weight:800; color:var(--gray-900);">現在は名目上の値が入っているだけで、ポリシーの選択は AD列の「想定関税額」で行われています。</p>
+    </div>
+
+    <h3>具体例: 仕入れ ¥230,000 の商品</h3>
+    <p style="font-size:13px; color:var(--gray-500); margin-bottom:16px;">条件: 関税15% / 手数料18% / 広告費3% / 利益率20%</p>
+
+    <div class="compare-grid">
+      <div class="calc-example" style="grid-column: 1;">
+        <div class="calc-header old-bg">閾値 $390 の場合</div>
+        <div class="calc-body">
+          <div class="calc-row"><span class="label">想定関税額</span><span class="value">$521</span></div>
+          <div class="calc-row"><span class="label">販売価格</span><span class="value red">$2,708</span></div>
+          <div class="calc-row"><span class="label">送料（ポリシー）</span><span class="value">$390</span></div>
+          <div class="calc-row total"><span class="label">バイヤーが払う総額</span><span class="value">$3,098</span></div>
+        </div>
+      </div>
+      <div class="calc-example" style="grid-column: 2;">
+        <div class="calc-header new-bg">閾値 $500 の場合</div>
+        <div class="calc-body">
+          <div class="calc-row"><span class="label">想定関税額</span><span class="value">$521</span></div>
+          <div class="calc-row"><span class="label">販売価格</span><span class="value green">$2,598</span></div>
+          <div class="calc-row"><span class="label">送料（ポリシー）</span><span class="value">$500</span></div>
+          <div class="calc-row total"><span class="label">バイヤーが払う総額</span><span class="value">$3,098</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="highlight info">
+      <strong>バイヤーが払う総額（販売価格 + 送料）は同じ $3,098</strong><br>
+      eBay手数料もこの合計に対してかかるため、手数料は変わりません。<br>
+      違いは、関税の超過分を<strong>販売価格に載せるか、送料に載せるか</strong>です。
+    </div>
+
+    <h3>メリット1: 販売価格が下がる = 競争力が上がる</h3>
+    <p>eBayの検索結果やリスティングに表示されるのは<strong>販売価格</strong>です。送料は目立ちません。</p>
+
+    <div style="display:flex; align-items:center; justify-content:center; gap:24px; margin:20px 0; flex-wrap:wrap;">
+      <div style="text-align:center; padding:16px 24px; background:var(--danger-light); border-radius:10px; border:2px solid var(--danger);">
+        <p style="font-size:13px; color:var(--danger); font-weight:700;">閾値 $390</p>
+        <p style="font-size:32px; font-weight:800; color:var(--danger);">$2,708</p>
+      </div>
+      <div style="font-size:28px; color:var(--gray-300);">→</div>
+      <div style="text-align:center; padding:16px 24px; background:var(--success-light); border-radius:10px; border:2px solid var(--success);">
+        <p style="font-size:13px; color:var(--success); font-weight:700;">閾値 $500</p>
+        <p style="font-size:32px; font-weight:800; color:var(--success);">$2,598</p>
+      </div>
+    </div>
+    <p>同じ商品で <strong>$110 安く見える</strong>。アメリカだけでなく、全ての国のバイヤーに対してこの価格差が表示されます。</p>
+
+    <h3>メリット2: アメリカ向けの実関税が下がる</h3>
+    <p>アメリカの関税は<strong>販売価格</strong>に対して計算されます。販売価格が低ければ、実際に徴収される関税額も下がります。</p>
+
+    <div class="compare-grid">
+      <div class="calc-example" style="grid-column: 1;">
+        <div class="calc-header old-bg">販売価格 $2,708</div>
+        <div class="calc-body">
+          <div class="calc-row"><span class="label">実関税（約15%）</span><span class="value red">約 $406</span></div>
+        </div>
+      </div>
+      <div class="calc-example" style="grid-column: 2;">
+        <div class="calc-header new-bg">販売価格 $2,598</div>
+        <div class="calc-body">
+          <div class="calc-row"><span class="label">実関税（約15%）</span><span class="value green">約 $390</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center; padding:16px; margin:16px 0; background:var(--success-light); border-radius:10px; border:2px solid var(--success);">
+      <p style="font-size:15px; color:var(--gray-700); margin-bottom:4px;">販売価格が $110 下がることで</p>
+      <p style="font-size:28px; font-weight:800; color:var(--success);">実関税が約 $16〜20 安くなる</p>
+    </div>
+  </div>
+
+  <!-- セクション3削除（ポリシー一覧テーブル・DDU注釈・新方式フロー） -->
+
+  <!-- ===== 3. $2,500以上でも関税額を設定しておく理由 ===== -->
+  <div class="section">
+    <h2>3. $2,500以上でも関税額を設定しておく理由</h2>
+
+    <p>$2,500を超える商品はDDU（バイヤーが関税を払う）で発送できるため、シッピングポリシーは不要に見えます。<br>しかし、<strong>オファーで値引きしても、シッピングポリシーの送料設定は維持されます。</strong></p>
+
+    <div class="flow" style="margin:20px 0;">
+      <div class="flow-step neutral">
+        <div class="num" style="background:var(--primary);color:#fff;">1</div>
+        <div><strong>$2,700</strong> で出品（DDU）— シッピングポリシーに $500 の関税設定済み</div>
+      </div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-step neutral">
+        <div class="num" style="background:var(--primary);color:#fff;">2</div>
+        <div>バイヤーから <strong>$2,400</strong> のオファー → 受諾</div>
+      </div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-step bad">
+        <div class="num">3</div>
+        <div>$2,500を下回ったため、Cpassでは<strong>DDP（セラーが関税を払う）に自動切替</strong></div>
+      </div>
+    </div>
+
+    <div style="text-align:center; padding:24px; margin:20px 0; background:var(--success-light); border-radius:10px; border:2px solid var(--success);">
+      <p style="font-size:18px; color:var(--gray-700); margin-bottom:8px;">値引きしてもシッピングポリシーの <strong>$500</strong> は維持される</p>
+      <p style="font-size:28px; font-weight:800; color:var(--success);">関税費用は確保されたまま → 安心</p>
+    </div>
+
+    <div class="highlight danger" style="margin-top:16px;">
+      <strong>逆に、ポリシーを設定していなかった場合</strong><br>
+      DDPに切り替わった瞬間、関税費用の設定がないため、関税額がそのまま赤字になります。
+    </div>
+
+    <div class="highlight info" style="margin-top:16px;">
+      <strong>高額商品の関税未払い対策にもなる（アメリカ向け）</strong><br>
+      シッピングポリシーでDDP設定を維持しておくことで、高額商品でバイヤーが関税を払わないリスクを防げます。<br>
+      関税はセラーが発送時に確定払いするため、バイヤーの受取拒否や関税未払いが起きません。
+    </div>
+  </div>
+
+  <!-- ===== 4. 大切なこと ===== -->
+  <div class="section">
+    <h2>4. 大切なこと</h2>
+
+    <div class="merit-cards">
+      <div class="merit-card">
+        <div class="icon">💰</div>
+        <div class="title">販売価格を抑えられる</div>
+        <div class="desc">関税超過分の上乗せが不要になり、競争力のある価格を維持できる</div>
+      </div>
+      <div class="merit-card">
+        <div class="icon">📉</div>
+        <div class="title">関税・手数料の連鎖増を防ぐ</div>
+        <div class="desc">販売価格が上がらないため、関税額・eBay手数料・広告費の連鎖的な増加が起きない</div>
+      </div>
+      <div class="merit-card">
+        <div class="icon">🛡️</div>
+        <div class="title">オファー受諾時の赤字を防ぐ</div>
+        <div class="desc">$2,500超の商品でもDDP設定を維持し、オファーで下回った時の関税負担をカバー</div>
+      </div>
+    </div>
+
+    <div class="highlight success">
+      <strong>結論</strong>
+      新しい$400〜$500シッピングポリシーを使うことで、<strong>販売価格</strong>・<strong>関税額</strong>・<strong>手数料</strong>の3つを同時に抑えることができます。<br>
+      特に$2,000〜$2,500帯の高額商品で効果が大きく、$2,500超の商品でもオファー時の安全網として機能します。
+    </div>
+  </div>
+
+
+  <div class="footer">
+    一括シートV3 シッピングポリシー解説資料 | 作成日: 2026-03-24
+  </div>
+
+</div>
+</body>
+</html>
